@@ -76,7 +76,7 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <label for="gender" > Gender
+                    <label for="gender"> Gender
                         <input type="radio" name="gender" value="male" checked> Male
                         <input type="radio" name="gender" value="female"> Female
                     </label>
@@ -91,6 +91,10 @@
                             <option value="{{ course[0] }}">{{ course[1] }}</option>
                         {% endfor %}
                     </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="joining_date">Joining date</label>
+                    <input type="date" class="form-control" name="joining_date">
                 </div>
             </div>
             <div class="row">

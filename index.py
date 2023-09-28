@@ -54,7 +54,6 @@ def login():
             flash('Credentials does\'t matched!', 'error')
             return redirect(url_for('login'))
 
-
 @app.route('/register-student', methods = ['GET','POST'])
 def register_student():
     if 'username' in session:
@@ -73,10 +72,11 @@ def register_student():
             gender = request.form['gender']
             course = request.form['course']
             address = request.form['address']
+            joining_date = request.form['joining_date']
 
             if name and phone and email and gender and course and address:
                 db =connection.cursor()
-                db.execute('INSERT INTO students (name, phone,email,gender,course,address) VALUES(%s,%s,%s,%s,%s,%s)',(name, phone,email,gender,course,address))
+                db.execute('INSERT INTO students (name, phone,email,gender,course,address,joining_date) VALUES(%s,%s,%s,%s,%s,%s,%s)',(name, phone,email,gender,course,address,joining_date))
                 connection.commit()
                 db.close()
                 flash('Student Registered Successfully!', 'success')
