@@ -63,6 +63,7 @@ def register_student():
             db.execute('SELECT * FROM courses')
             courses = db.fetchall()
             db.close()
+            # return courses
             return render_template('register_student.html',courses = courses,username=username)
         else:
             name = request.form['name']
@@ -72,7 +73,7 @@ def register_student():
             course = request.form['course']
             address = request.form['address']
             joining_date = request.form['joining_date']
-
+            # return request.form
             if name and phone and email and gender and course and address and joining_date:
                 db =connection.cursor()
                 db.execute('INSERT INTO students (name, phone,email,gender,course,address,joining_date) VALUES(%s,%s,%s,%s,%s,%s,%s)',(name, phone,email,gender,course,address,joining_date))

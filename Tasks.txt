@@ -1,0 +1,19 @@
+
+Tasks:
+
+1- admin can delete the student
+2- admin can edit the student
+
+3- make crud for users/admin same as Students i.e
+    -make a new tab in navbar for users/admins
+    -list all the users/admins
+    -can create users/admins
+    -can update any users/admins
+    -can delete any users/admins
+
+4- make crud for courses
+    -make a new tab in navbar for courses
+    -list all the courses
+    -can create new course
+    -can update any course-
+    -delete any course
