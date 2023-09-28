@@ -3,7 +3,6 @@ from mysql import connector
 
 connection = connector.connect(host="localhost",user="root",password='',database='student_registration') 
 
-
 app = Flask(__name__)
 app.secret_key = 'student_registraion'
 
@@ -74,7 +73,7 @@ def register_student():
             address = request.form['address']
             joining_date = request.form['joining_date']
 
-            if name and phone and email and gender and course and address:
+            if name and phone and email and gender and course and address and joining_date:
                 db =connection.cursor()
                 db.execute('INSERT INTO students (name, phone,email,gender,course,address,joining_date) VALUES(%s,%s,%s,%s,%s,%s,%s)',(name, phone,email,gender,course,address,joining_date))
                 connection.commit()
